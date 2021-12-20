@@ -26,10 +26,8 @@ class MainControllerTest {
     private MockMvc mockMvc;
 
     private static final String WELCOME_PATH = "/";
-    private static final String SUM_PATH = "/sum/2/3";
-    private static final String MINUS_PATH = "/minus/10/7";
-    private static final String DIV_PATH = "/div/15/3";
-    private static final String MULTIPLY_PATH = "/multiply/5/2";
+    private static final String QUARTER_PATH = "/2";
+
 
 
     @BeforeEach
@@ -43,31 +41,10 @@ class MainControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @org.junit.Test
-    void whenSumResultThenSuccess() throws Exception {
-        when(mainService.sum(anyInt(), anyInt())).thenReturn(777);
-        mockMvc.perform(get(SUM_PATH))
-                .andExpect(status().isOk());
-    }
-
-    @org.junit.Test
-    void whenMinusResultThenSuccess() throws Exception {
-        when(mainService.minus(anyInt(), anyInt())).thenReturn(777);
-        mockMvc.perform(get(MINUS_PATH))
-                .andExpect(status().isOk());
-    }
-
-    @org.junit.Test
-    void whenDivResultThenSuccess() throws Exception {
-        when(mainService.div(anyInt(), anyInt())).thenReturn(777);
-        mockMvc.perform(get(DIV_PATH))
-                .andExpect(status().isOk());
-    }
-
-    @org.junit.Test
-    void whenMultiplyResultThenSuccess() throws Exception {
-        when(mainService.multiply(anyInt(), anyInt())).thenReturn(777);
-        mockMvc.perform(get(MULTIPLY_PATH))
+    @Test
+    void whenReturnStringResultThenSuccess() throws Exception {
+        when(mainService.quarter(anyInt())).thenReturn("Any string");
+        mockMvc.perform(get(QUARTER_PATH))
                 .andExpect(status().isOk());
     }
 }

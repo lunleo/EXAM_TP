@@ -4,28 +4,30 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MainService {
-    public String doThat(String param1, String param2) {
-        int a;
-
-        try {
-            a = Integer.parseInt(param1);
-        } catch (NumberFormatException e) {
-            return e.getMessage();
+    public String quarter(int month) {
+        String quarter = new String();
+        switch (month) {
+            case 1:
+            case 2:
+            case 3:
+                quarter = "first quarter";
+                break;
+            case 4:
+            case 5:
+            case 6:
+                quarter = "second quarter";
+                break;
+            case 7:
+            case 8:
+            case 9:
+                quarter = "third quarter";
+                break;
+            case 10:
+            case 11:
+            case 12:
+                quarter = "fourth quarter";
+                break;
         }
-
-        return "Result: " + a + param2;
-    }
-
-    public int sum(int a, int b){
-        return a+b;
-    }
-    public int minus(int a, int b){
-        return a-b;
-    }
-    public int div(int a, int b){
-        return a/b;
-    }
-    public int multiply(int a, int b){
-        return a*b;
+        return quarter;
     }
 }

@@ -13,42 +13,35 @@ class MainServiceTest {
     MainService mainService = new MainService();
 
     @Test
-    void whenSumThenSuccess() {
-        int a = 2;
-        int b = 3;
+    void whenFirstQuarterThenSuccess() {
+        int month = 2;
 
-        int actualResult = mainService.sum(a, b);
-        int expectedResult = 5;
+        String actualResult = mainService.quarter(month);
+        String expectedResult = "first quarter";
         assertEquals(actualResult, expectedResult);
     }
-
     @Test
-    void whenMinusThenSuccess() {
-        int a = 10;
-        int b = 7;
+    void whenSecondQuarterThenSuccess() {
+        int month = 4;
 
-        int actualResult = mainService.minus(a, b);
-        int expectedResult = 3;
+        String actualResult = mainService.quarter(month);
+        String expectedResult = "second quarter";
         assertEquals(actualResult, expectedResult);
     }
-
     @Test
-    void whenDivThenSuccess() {
-        int a = 15;
-        int b = 3;
+    void whenThirdQuarterThenSuccess() {
+        int month = 9;
 
-        int actualResult = mainService.div(a, b);
-        int expectedResult = 5;
+        String actualResult = mainService.quarter(month);
+        String expectedResult = "third quarter";
         assertEquals(actualResult, expectedResult);
     }
-
     @Test
-    void whenMultiplyThenSuccess() {
-        int a = 5;
-        int b = 2;
+    void whenFourthQuarterThenSuccess() {
+        int month = 12;
 
-        int actualResult = mainService.multiply(a, b);
-        int expectedResult = 10;
+        String actualResult = mainService.quarter(month);
+        String expectedResult = "fourth quarter";
         assertEquals(actualResult, expectedResult);
     }
 }

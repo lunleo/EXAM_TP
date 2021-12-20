@@ -13,28 +13,15 @@ public class MainController {
 
     @GetMapping("/")
     public ResponseEntity<?> hello() {
-        return ResponseEntity.ok("MY WORK");
+        return ResponseEntity.ok("Leonid Lunin Exam Task 11 variant");
     }
 
 
-    @GetMapping("/sum/{a}/{b}")
-    public ResponseEntity<?> sum(@PathVariable int a, @PathVariable int b) {
-        return ResponseEntity.ok("a +b = " + mainService.sum(a, b));
+    @GetMapping("/{quarter}")
+    public ResponseEntity<?> quarter(@PathVariable int quarter) {
+        return ResponseEntity.ok("Quarter of this month: " + mainService.quarter(quarter));
     }
 
-    @GetMapping("/minus/{a}/{b}")
-    public ResponseEntity<?> minus(@PathVariable int a, @PathVariable int b) {
-        return ResponseEntity.ok(mainService.minus(a, b));
-    }
 
-    @GetMapping("/div/{a}/{b}")
-    public ResponseEntity<?> div(@PathVariable int a, @PathVariable int b) {
-        return ResponseEntity.ok(mainService.div(a, b));
-    }
-
-    @GetMapping("/multiply/{a}/{b}")
-    public ResponseEntity<?> multiply(@PathVariable int a, @PathVariable int b) {
-        return ResponseEntity.ok(mainService.multiply(a, b));
-    }
 }
 
